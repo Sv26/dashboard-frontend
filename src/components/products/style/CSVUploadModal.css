@@ -1,0 +1,135 @@
+/* Backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal container (transparent) */
+.csv-modal {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card */
+.csv-card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 24px 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Error */
+.csv-error {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* Form */
+.csv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Upload box */
+.csv-upload-box {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 36px;
+  text-align: center;
+  background: #fafafa;
+  transition: all 0.25s ease;
+}
+
+.csv-upload-box:hover {
+  border-color: #4f46e5;
+  background: #f4f6ff;
+}
+
+/* Upload label */
+.csv-upload-label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.csv-upload-icon {
+  font-size: 28px;
+}
+
+.csv-upload-text {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.csv-upload-text span {
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+/* File name */
+.csv-file-name {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #111827;
+  font-weight: 500;
+}
+
+/* Actions */
+.csv-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Buttons */
+.csv-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.csv-btn-cancel {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.csv-btn-cancel:hover {
+  background: #f3f4f6;
+}
+
+.csv-btn-upload {
+  background: #111827;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+}
+
+.csv-btn-upload:hover:not(:disabled) {
+  background: #000000;
+}
+
+.csv-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

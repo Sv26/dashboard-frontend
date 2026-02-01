@@ -1,0 +1,457 @@
+/* =========================
+   PAGE
+========================= */
+.invoice-page {
+  padding: 10px 12px;
+  background: #3b3f51;
+  min-height: 100vh;
+}
+
+.invoice-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 6px 8px;
+  margin-bottom: 10px;
+
+  border-bottom: 3px solid #6b7280;
+}
+.invoice-page h1 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.invoice-Search {
+  display: flex;
+  align-items: center;
+}
+.invoice-Search .search-input {
+  height: 36px;
+  width: 240px;
+
+  padding: 0 14px;
+  border-radius: 999px; /* pill like Figma */
+
+  background: #4a4f63;
+  color: #ffffff;
+
+  border: none;
+  font-size: 13px;
+  outline: none;
+}
+.invoice-Search .search-input::placeholder {
+  color: #c7cad6;
+}
+
+.invoice-page section {
+  padding: 14px 16px;
+  margin-bottom: 24px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.invoice-page section h2 {
+  margin: 14px 14px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+.overview-card {
+  position: relative;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.overview-card:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  background: #e5e7eb;
+}
+
+.overview-card h4 {
+  font-size: 13px;
+  color: #2d2e2f;
+  margin-bottom: 6px;
+}
+
+.overview-card h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #393a3d;
+}
+
+.overview-card span {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.overview-card-min {
+  display: flex;
+
+  justify-content: space-around;
+}
+
+/* =========================
+   TABLE CARD
+========================= */
+.invoice-card {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table-title {
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* =========================
+   TABLE
+========================= */
+.invoice-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.invoice-card thead {
+  background: #c4c6d6;
+}
+
+.invoice-card th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.invoice-card td {
+  padding: 12px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.invoice-card tbody tr:hover {
+  background: #f5f7fb;
+}
+
+/* =========================
+   MENU BUTTON
+========================= */
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* =========================
+   DROPDOWN MENU
+========================= */
+.row-menu {
+  position: absolute;
+  top: 32px;
+  right: 0;
+
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px;
+  min-width: 160px;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  z-index: 999;
+}
+.row-menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  width: 100%;
+  padding: 8px 12px;
+
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 13px;
+  cursor: pointer;
+
+  border-radius: 6px;
+}
+.status-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+
+  border-radius: 8px;
+  white-space: nowrap;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.row-menu button:hover {
+  background: #f3f4f6;
+}
+
+.row-menu .danger {
+  color: #d32f2f;
+}
+
+.row-menu button:last-child {
+  margin-bottom: 0;
+}
+
+.row-menu button:hover {
+  background: #f3f4f6;
+}
+
+.row-menu .danger {
+  color: #d32f2f;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-size: 13px;
+  color: #374151;
+}
+
+.modal-backdrop .modal {
+  position: absolute;
+
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 420px;
+  padding: 24px 28px;
+  border-radius: 20px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   BASE MODAL
+========================= */
+.modal {
+  background: #ffffff;
+  padding: 24px;
+  min-width: 360px;
+  border-radius: 20px;
+}
+.modal p {
+  font-size: 16px;
+  color: #111827;
+  margin-bottom: 28px;
+}
+
+/* =========================
+   MODAL ACTIONS
+========================= */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-actions button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-actions .danger {
+  background: #1f2937;
+  color: #ffffff;
+}
+
+/* =========================
+   INVOICE MODAL
+========================= */
+.invoice-modal {
+  background: #ffffff;
+  padding: 28px 26px;
+  width: 480px;
+  max-height: 85vh;
+  overflow-y: auto;
+
+  border-radius: 14px;
+  position: relative;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  animation: modalPop 0.25s ease-out;
+}
+
+.invoice-modal h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.invoice-modal > button {
+  position: absolute;
+}
+
+/* =========================
+   MENU STATUS TOGGLE BUTTON
+========================= */
+.menu-status-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  padding: 10px 14px;
+
+  border-radius: 10px;
+  border: none;
+
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu-status-btn.paid {
+  background: #4caf50;
+}
+
+.menu-status-btn.unpaid {
+  background: #e53935;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@media (max-width: 1024px) {
+  .invoice-header {
+    padding: 6px;
+  }
+
+  .invoice-Search .search-input {
+    width: 200px;
+  }
+
+  .overview-card {
+    padding: 0 16px;
+  }
+
+  .invoice-card th,
+  .invoice-card td {
+    padding: 10px 12px;
+    font-size: 12.5px;
+  }
+}
+@media (max-width: 768px) {
+  /* Header stack */
+  .invoice-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .invoice-page h1 {
+    font-size: 16px;
+  }
+
+  .invoice-Search {
+    width: 100%;
+  }
+
+  .invoice-Search .search-input {
+    width: 100%;
+  }
+
+  /* Overview cards stack */
+  .overview-card-min {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .overview-card:not(:first-child)::before {
+    display: none;
+  }
+
+  /* Table horizontal scroll */
+  .invoice-card {
+    overflow-x: auto;
+  }
+
+  .invoice-card table {
+    min-width: 700px;
+  }
+
+  /* Right-side delete modal becomes centered */
+  .modal-backdrop .modal {
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 420px;
+  }
+}
+@media (max-width: 480px) {
+  .invoice-page {
+    padding: 8px;
+  }
+
+  .invoice-page h1 {
+    font-size: 15px;
+  }
+
+  .invoice-Search .search-input {
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .invoice-card th,
+  .invoice-card td {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .menu-btn {
+    font-size: 16px;
+  }
+}

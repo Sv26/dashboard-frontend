@@ -1,0 +1,157 @@
+/* =========================
+   MODAL BACKDROP
+========================= */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 22, 34, 0.65);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* =========================
+   WRAPPER (for actions)
+========================= */
+.invoice-wrapper {
+  position: relative;
+}
+
+/* =========================
+   ACTION ICONS
+========================= */
+.invoice-actions {
+  position: absolute;
+  right: -56px;
+  top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.invoice-actions button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.invoice-actions .close {
+  background: #f97316;
+  color: #fff;
+}
+
+.invoice-actions .download {
+  background: #38bdf8;
+}
+
+.invoice-actions .print {
+  background: #facc15;
+}
+
+/* =========================
+   INVOICE CARD
+========================= */
+.invoice-modal {
+  width: 760px;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 36px 40px;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  animation: modalPop 0.25s ease-out;
+}
+
+/* =========================
+   HEADER
+========================= */
+.invoice-header h1 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.invoice-address {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.invoice-address p {
+  margin: 2px 0;
+}
+
+.invoice-address strong {
+  color: #111827;
+}
+
+.invoice-address .right {
+  text-align: right;
+}
+
+/* =========================
+   TABLE
+========================= */
+.invoice-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 32px;
+}
+
+.invoice-body th,
+.invoice-body td {
+  padding: 14px 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.invoice-body th {
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+}
+
+.invoice-body .right {
+  text-align: right;
+}
+
+/* =========================
+   TOTALS
+========================= */
+.invoice-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+  font-size: 15px;
+}
+
+.invoice-total p {
+  margin: 6px 0;
+}
+
+.invoice-total .grand {
+  font-weight: 700;
+  color: #0284c7;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

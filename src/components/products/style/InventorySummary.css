@@ -1,0 +1,132 @@
+/* =========================
+   Inventory Summary Card
+========================= */
+
+.inventory-summary {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px 0; /* remove side padding */
+  margin-bottom: 20px;
+}
+
+/* =========================
+   Title
+========================= */
+
+.summary-title {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 24px 20px;
+  color: #111827;
+}
+
+/* =========================
+   Grid Layout
+========================= */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* =========================
+   Summary Item → Overview Card
+========================= */
+
+.summary-item {
+  position: relative;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* vertical divider like overview-card */
+.summary-item:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  background: #e5e7eb;
+}
+
+/* =========================
+   Headings
+========================= */
+
+.summary-item h4 {
+  font-size: 13px;
+  font-weight: 400;
+  color: #2d2e2f;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   Main Values
+========================= */
+
+.summary-value {
+  font-size: 20px;
+  font-weight: 400;
+  color: #393a3d;
+  line-height: 1.2;
+}
+
+/* =========================
+   Sub Text
+========================= */
+
+.summary-item span {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* =========================
+   Dual Values
+========================= */
+
+.dual-values {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* =========================
+   Divider (JSX Safe)
+========================= */
+
+.divider {
+  display: none;
+}
+/* =========================
+   INVENTORY SUMMARY – MOBILE / TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .inventory-summary {
+    padding: 16px;
+  }
+
+  .summary-title {
+    margin: 0 0 14px;
+    font-size: 16px;
+  }
+
+  /* switch to 2 columns */
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .summary-item {
+    padding: 0;
+  }
+
+  /* remove vertical dividers */
+  .summary-item::before {
+    display: none;
+  }
+}

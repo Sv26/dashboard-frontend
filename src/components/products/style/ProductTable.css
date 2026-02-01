@@ -1,0 +1,180 @@
+/* =========================
+   TABLE
+========================= */
+.product-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.product-table thead th {
+  background: #c7c9d9;
+  color: #111827;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-right: 1px solid #b6b8c6;
+  text-align: center;
+}
+
+.product-table thead th:first-child {
+  text-align: left;
+}
+
+.product-table thead th:last-child {
+  border-right: none;
+}
+
+/* =========================
+   ROWS
+========================= */
+.product-table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.product-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* =========================
+   CELLS
+========================= */
+.product-table tbody td {
+  padding: 8px;
+  border-bottom: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+  color: #374151;
+  text-align: center;
+}
+
+.product-table tbody td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.product-table tbody td:last-child {
+  border-right: none;
+  font-weight: 600;
+}
+
+/* Remove border on last row */
+.product-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================
+   PRICE
+========================= */
+.product-table tbody td:nth-child(2) {
+  color: #111827;
+  font-weight: 500;
+}
+
+/* =========================
+   EXPIRY
+========================= */
+.product-table tbody td:nth-child(5) {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* =========================
+   STATUS COLORS
+========================= */
+.product-table td.in-stock {
+  color: #16a34a; /* green */
+}
+
+.product-table td.low-stock {
+  color: #f59e0b; /* amber */
+}
+
+.product-table td.out-of-stock {
+  color: #ef4444; /* red */
+}
+/* =========================
+   PRODUCT TABLE — MOBILE
+========================= */
+@media (max-width: 768px) {
+  /* Horizontal scroll container */
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent column collapse */
+  .product-table {
+    font-size: 13px;
+  }
+
+  /* Compact header */
+  .product-table thead th {
+    padding: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* Compact cells */
+  .product-table tbody td {
+    padding: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* Product name slightly stronger */
+  .product-table tbody td:first-child {
+    font-weight: 600;
+  }
+
+  /* Status colors stay visible */
+  .product-table td.in-stock,
+  .product-table td.low-stock,
+  .product-table td.out-of-stock {
+    font-weight: 600;
+  }
+}
+@media (max-width: 768px) {
+  /* Scroll wrapper */
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent squishing */
+  .product-table {
+    min-width: 640px;
+    font-size: 13px;
+  }
+
+  /* Compact header */
+  .product-table thead th {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  /* Compact cells */
+  .product-table tbody td {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  /* Product name emphasis */
+  .product-table tbody td:first-child {
+    font-weight: 600;
+  }
+
+  /* Status visibility */
+  .product-table td.in-stock,
+  .product-table td.low-stock,
+  .product-table td.out-of-stock {
+    font-weight: 600;
+  }
+}

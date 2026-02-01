@@ -1,0 +1,261 @@
+/* =========================
+   LAYOUT
+========================= */
+.dashboard-fluid {
+  max-width: none;
+  width: 100%;
+}
+.dashboard-layout {
+  max-width: none !important;
+}
+.page {
+  min-width: 100%; /* 🔥 critical for flex layouts */
+  min-height: 100vh;
+  width: 100%;
+  background: #3b3f51;
+  padding: 14px 18px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* =========================
+   SEARCH
+========================= */
+.toolbar input {
+  height: 36px;
+  border-radius: 999px;
+  padding: 0 14px;
+  border: none;
+  background: #4a4f63;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.toolbar input::placeholder {
+  color: #c7cad6;
+}
+
+.toolbar input:focus {
+  outline: none;
+}
+
+/* =========================
+   INVENTORY SUMMARY SPACING
+========================= */
+.inventory {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* =========================
+   TABLE CARD
+========================= */
+.table-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   TABLE HEADER
+========================= */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table-header h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* =========================
+   ADD PRODUCT BUTTON
+========================= */
+.add-btn {
+  background: #1f2230;
+  color: #ffffff;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background: #272b3f;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.pagination button {
+  min-width: 64px;
+  height: 30px;
+  font-size: 11px;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  padding: 0 8px;
+}
+
+/* =========================
+   MODAL BACKDROP
+========================= */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1000;
+}
+
+/* =========================
+   ADD PRODUCT TYPE MODAL
+========================= */
+.add-type-modal {
+  margin-top: 100px;
+  width: 460px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.add-type-btn {
+  height: 48px;
+  border-radius: 10px;
+  background: #1f2230;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.add-type-btn.secondary {
+  background: #2b2f42;
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+
+  main {
+    flex: unset !important;
+    width: 100% !important;
+  }
+
+  .page {
+    padding: 30px;
+    margin: 0 auto;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header h1 {
+    font-size: 16px;
+  }
+
+  .toolbar input {
+    width: 100%;
+  }
+
+  .table-card {
+    border-radius: 14px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .pagination button {
+    width: 100%;
+    height: 34px;
+  }
+
+  .page-info {
+    text-align: center;
+  }
+
+  .add-type-modal {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .add-type-btn {
+    height: 44px;
+    font-size: 13px;
+  }
+}
+main {
+  width: 100%;
+}
+
+.marketing main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
