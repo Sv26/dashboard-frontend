@@ -2,7 +2,7 @@ import Axios from "axios";
 
 /* Axios instance */
 const axios = Axios.create({
-  baseURL: "https://dashboard-backend-s2b3.onrender.com",
+  baseURL: "https://dashboard-backend-s2b3.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },

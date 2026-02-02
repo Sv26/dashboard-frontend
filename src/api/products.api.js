@@ -1,4 +1,4 @@
-const API_URL = "https://dashboard-backend-s2b3.onrender.com";
+const API_URL = "https://dashboard-backend-s2b3.onrender.com/api/products";
 
 /* =========================
    AUTH TOKEN

@@ -8,8 +8,30 @@ import illustration from "../../../asetes/illustration.png";
 
 export default function Signup() {
   const navigate = useNavigate();
+
   const [show, setShow] = useState(false);
   const [data, setData] = useState({ name: "", email: "", password: "" });
+  const [error, setError] = useState("");
+
+  const handleSignup = () => {
+    setError("");
+
+    if (!data.name || !data.email || !data.password) {
+      setError("All fields are required");
+      return;
+    }
+
+    if (data.password.length < 8) {
+      setError("Password must be at least 8 characters");
+      return;
+    }
+
+    signupController({
+      data,
+      onSuccess: () => navigate("/"),
+      setError, // ✅ inline error only
+    });
+  };
 
   return (
     <div className="signup-wrapper">
@@ -47,16 +69,10 @@ export default function Signup() {
           </button>
         </div>
 
-        <button
-          className="signup-primary"
-          onClick={() =>
-            signupController({
-              data,
-              onSuccess: () => navigate("/"),
-              setError: alert,
-            })
-          }
-        >
+        {/* ✅ INLINE ERROR */}
+        {error && <p className="signup-error">{error}</p>}
+
+        <button className="signup-primary" onClick={handleSignup}>
           Sign up
         </button>
 

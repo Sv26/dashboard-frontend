@@ -221,6 +221,22 @@
     padding: 60px 40px;
   }
 }
+.login-forgot {
+  text-align: right;
+  margin-top: 6px;
+  margin-bottom: 18px;
+}
+
+.login-forgot span {
+  font-size: 13px;
+  color: #6366f1;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.login-forgot span:hover {
+  text-decoration: underline;
+}
 
 @media (max-width: 768px) {
   .login-wrapper {

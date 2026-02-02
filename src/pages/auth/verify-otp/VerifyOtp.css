@@ -114,6 +114,27 @@
   height: auto;
   object-fit: contain;
 }
+.resend-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #4f46e5;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: right;
+}
+
+.resend-link:hover {
+  text-decoration: underline;
+}
+
+.resend-link.disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+  text-decoration: none;
+}
 
 /* ================= TABLET ================= */
 @media (max-width: 1024px) {

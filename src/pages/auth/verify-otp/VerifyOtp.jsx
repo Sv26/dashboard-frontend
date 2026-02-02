@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { verifyOtpController } from "../../../controllers/auth.controller";
+import {
+  verifyOtpController,
+  forgotController,
+} from "../../../controllers/auth.controller";
 
 import "./VerifyOtp.css";
 import illustration from "../../../asetes/otp.png";
 
 export default function VerifyOtp() {
   const navigate = useNavigate();
+
   const [otp, setOtp] = useState("");
   const [error, setError] = useState("");
+
+  const [cooldown, setCooldown] = useState(0);
+  const [resending, setResending] = useState(false);
 
   const handleVerifyOtp = () => {
     setError("");
@@ -24,6 +31,35 @@ export default function VerifyOtp() {
       setError: (msg) => setError(msg || "Invalid OTP. Please try again."),
     });
   };
+
+  const handleResendOtp = () => {
+    if (resending || cooldown > 0) return;
+
+    setResending(true);
+
+    forgotController({
+      email: localStorage.getItem("resetEmail"),
+      onSuccess: () => {
+        alert("OTP resent");
+        setCooldown(30);
+        setResending(false);
+      },
+      setError: (msg) => {
+        setError(msg || "Failed to resend OTP");
+        setResending(false);
+      },
+    });
+  };
+
+  useEffect(() => {
+    if (cooldown === 0) return;
+
+    const timer = setInterval(() => {
+      setCooldown((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [cooldown]);
 
   return (
     <div className="verify-wrapper">
@@ -46,14 +82,25 @@ export default function VerifyOtp() {
 
         {error && <p className="verify-error">{error}</p>}
 
+        {/* ✅ FIXED RESEND OTP */}
+        <button
+          type="button"
+          className={`resend-link ${
+            cooldown > 0 || resending ? "disabled" : ""
+          }`}
+          onClick={handleResendOtp}
+          disabled={cooldown > 0 || resending}
+        >
+          {resending
+            ? "Sending..."
+            : cooldown > 0
+              ? `Resend OTP in ${cooldown}s`
+              : "Resend OTP"}
+        </button>
+
         <button className="verify-primary" onClick={handleVerifyOtp}>
           Verify OTP
         </button>
-
-        <p className="verify-footer">
-          Didn&apos;t receive it?{" "}
-          <span onClick={() => navigate("/forgot-password")}>Resend OTP</span>
-        </p>
       </div>
 
       <div className="verify-visual">

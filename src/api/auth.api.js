@@ -1,4 +1,4 @@
-const API_URL = "https://dashboard-backend-s2b3.onrender.com";
+const API_URL = "https://dashboard-backend-s2b3.onrender.com/api/auth";
 
 const post = async (url, body) => {
   const res = await fetch(url, {
@@ -20,7 +20,12 @@ export const loginApi = (data) => post(`${API_URL}/login`, data);
 export const signupApi = (data) => post(`${API_URL}/signup`, data);
 export const forgotPasswordApi = (email) =>
   post(`${API_URL}/forgot-password`, { email });
+
 export const verifyOtpApi = (otp) =>
-  post(`${API_URL}/verify-reset-otp`, { otp });
+  post(`${API_URL}/verify-reset-otp`, {
+    otp,
+    email: localStorage.getItem("resetEmail"),
+  });
+
 export const resetPasswordApi = (data) =>
   post(`${API_URL}/reset-password`, data);

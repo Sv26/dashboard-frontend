@@ -59,6 +59,12 @@ export default function Login() {
           </button>
         </div>
 
+        <div className="login-forgot">
+          <span onClick={() => navigate("/forgot-password")}>
+            Forgot Password?
+          </span>
+        </div>
+
         {/* ✅ INLINE ERROR */}
         {error && <p className="login-error">{error}</p>}
 
